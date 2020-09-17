@@ -19,6 +19,11 @@ Run the Firebird image
 docker run --name firebird -d controlsoft/firebird:3
 ```
 
+## Volume:
+
+#### `/databases`
+Default location to put database files
+
 ## Environment Variables:
 
 ### `ISC_PASSWORD`
