@@ -1,4 +1,5 @@
-# Firebird SQL Server
+
+# Firebird SQL Server  ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/controlsoft/firebird?color=%231ed760) ![Docker Pulls](https://img.shields.io/docker/pulls/controlsoft/firebird)
 Dockerfile to build a Firebird SQL Server container image which can be linked to other containers.
 
 ## Supported Docker tags
