@@ -25,6 +25,8 @@ cd ${FBINSTDIR}
 chmod +x install.sh
 ./install.sh -silent
 
+rm -Rf /tmp/inst/firebird
+
 export PATH="/opt/firebird/bin:$PATH"
 
 mkdir /usr/local/firebird

@@ -1,5 +1,4 @@
-
-# Firebird SQL Server  ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/controlsoft/firebird?color=%231ed760) ![Docker Pulls](https://img.shields.io/docker/pulls/controlsoft/firebird)
+# Firebird SQL Server  [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/controlsoft/firebird?color=%231ed760)](https://hub.docker.com/r/controlsoft/firebird) [![Docker Pulls](https://img.shields.io/docker/pulls/controlsoft/firebird)](https://hub.docker.com/r/controlsoft/firebird)
 Dockerfile to build a Firebird SQL Server container image which can be linked to other containers.
 
 ## Supported Docker tags
@@ -27,14 +26,15 @@ Default location to put database files
 ## Environment Variables:
 
 ### `ISC_PASSWORD`
-*Sysdba* user password, if left blank a random 10 character password will be set.
-The password used will be placed in `/firebird/etc/SYSDBA.password`.
+**Sysdba** user password, if blank a random 10 character password will be set.
+The password used will be placed in `/opt/firebird/SYSDBA.password`.
 
 ### `WIRECRYPT`
 
-If this is set to true this will set `WireCrypt = enabled` to allow compatibility with Jaybird 3
+If this is set to true this will set `WireCrypt = enabled` to allow compatibility with Jaybird 3 (DBeaver, etc)
 
 ## Default Ports
 
-Firebird: 3050/TCP
-Firebird Events: 3051/TCP
+**Firebird:** 3050/TCP
+
+**Firebird Events:** 3051/TCP
