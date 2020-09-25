@@ -1,3 +1,5 @@
+<img src="https://labs.controlsoft.com.br/img/firebird-logo.png" alt="Firebird SQL Server Docker Image" align="right" />
+
 # Firebird SQL Server  [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/controlsoft/firebird?color=%231ed760)](https://hub.docker.com/r/controlsoft/firebird) [![Docker Pulls](https://img.shields.io/docker/pulls/controlsoft/firebird)](https://hub.docker.com/r/controlsoft/firebird)
 Dockerfile to build a Firebird SQL Server container image which can be linked to other containers.
 
@@ -8,16 +10,16 @@ Dockerfile to build a Firebird SQL Server container image which can be linked to
 # Installation
 
 ```bash
-docker pull controlsoft/firebird:3
+docker pull controlsoft/firebird
 ```
 # Quick Start
 
 Run the Firebird image
 
 ```bash
-docker run --name firebird -d controlsoft/firebird:3
+docker run --name firebird -d controlsoft/firebird
 ```
-## ...via docker-compose
+## ...with docker-compose
 ```
 version: "2"
 services:
@@ -32,9 +34,14 @@ services:
       - C:\databases:/databases # Windows
       - /home/user/databases:/databases # Linux
     environment:
-      - ISC_PASSWORD=masterkey
-      - WIRECRYPT=true
+      - PASSWORD=masterkey
 ```
+
+## Result...
+```
+docker logs firebird
+```
+<img src="https://labs.controlsoft.com.br/img/firebird-docker.png" alt="Firebird Docker">
 
 ## Volume:
 
@@ -43,11 +50,11 @@ Default location to put database files
 
 ## Environment Variables:
 
-### `ISC_PASSWORD`
+### `PASSWORD`
 **Sysdba** user password, if blank a random 10 character password will be set.
 The password used will be placed in `/opt/firebird/SYSDBA.password`.
 
-### `WIRECRYPT`
+### `WIRECRYPT` (default true)
 
 If this is set to true this will set `WireCrypt = enabled` to allow compatibility with Jaybird 3 (DBeaver, etc)
 
