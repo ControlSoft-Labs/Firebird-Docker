@@ -17,6 +17,24 @@ Run the Firebird image
 ```bash
 docker run --name firebird -d controlsoft/firebird:3
 ```
+## ...via docker-compose
+```
+version: "2"
+services:
+  firebird:
+    restart: always
+    image: controlsoft/firebird
+    container_name: firebird
+    ports:
+      - 3050:3050
+      - 3051:3051
+    volumes:
+      - C:\databases:/databases # Windows
+      - /home/user/databases:/databases # Linux
+    environment:
+      - ISC_PASSWORD=masterkey
+      - WIRECRYPT=true
+```
 
 ## Volume:
 

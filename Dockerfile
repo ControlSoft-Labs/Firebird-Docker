@@ -3,7 +3,7 @@ FROM debian:buster-slim
 LABEL maintainer="patrick@controlsoft.com.br"
 LABEL version="3.0.4.33054"
 LABEL vendor="ControlSoft Sistemas"
-LABEL release-date="2020-09-17"
+LABEL release-date="2020-09-25"
 
 ENV FBURL=https://github.com/FirebirdSQL/firebird/releases/download/R3_0_4/Firebird-3.0.4.33054-0.amd64.tar.gz
 ENV DEBIAN_FRONTEND noninteractive

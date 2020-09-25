@@ -119,7 +119,9 @@ configure() {
 }
 
 addAlias() {
-    ln -s ${FBBIN}/registerDatabase.sh ${FBBIN}/alias
+    if [ -L "${FBBIN}/alias" ]; then
+      ln -s ${FBBIN}/registerDatabase.sh ${FBBIN}/alias
+    fi
 }
 
 if [[ ${1:0:1} = '-' ]]; then
