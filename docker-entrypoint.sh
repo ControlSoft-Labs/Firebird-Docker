@@ -79,11 +79,11 @@ createNewPassword() {
 
 changePassword() {
     if [ -f "${SECURITYDB}" ]; then
-        if [ -z ${ISC_PASSWORD} ]; then
-            ISC_PASSWORD=$(createNewPassword)
+        if [ -z ${PASSWORD} ]; then
+            PASSWORD=$(createNewPassword)
         fi
         ${FBPATH}/bin/isql -user sysdba ${SECURITYDB} <<EOL
-create or alter user SYSDBA password '${ISC_PASSWORD}' using plugin Srp;
+create or alter user SYSDBA password '${PASSWORD}' using plugin Srp;
 commit;
 quit;
 EOL
@@ -92,11 +92,11 @@ cat > "${FBPATH}/SYSDBA.password" <<EOL
 # Firebird generated password for user SYSDBA is:
 #
 ISC_USER=sysdba
-ISC_PASSWORD=${ISC_PASSWORD}
+ISC_PASSWORD=${PASSWORD}
 #
 # Also set legacy variable though it can't be exported directly
 #
-ISC_PASSWD=${ISC_PASSWORD}
+ISC_PASSWD=${PASSWORD}
 #
 # generated at time $(date)
 #
@@ -112,7 +112,7 @@ EOL
 }
 
 configure() {
-    if [[ ${WIRECRYPT} == 'true' ]]; then
+    if [[ ${WIRECRYPT} != 'false' ]]; then
         confSet WireCrypt "enabled"
     fi
     confSet RemoteAuxPort "3051"
